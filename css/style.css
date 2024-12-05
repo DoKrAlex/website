@@ -11,7 +11,7 @@ body, h1, h2, p, .topnav, .dropdown, .dropdown-content {
   }
 
   body {
-    background-image: url('../assets/images/background.png');
+    /* background-image: url('../assets/images/1024x768.png'); */
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
