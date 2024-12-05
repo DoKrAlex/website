@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Projects</title>
+    <link rel="stylesheet" href="css/style.css">  
+</head>
+<style>
+body {
+  font-family: Consolas, sans-serif;
+  background-color: #f4f4f4; /* Optional light gray background */
+}
+
+table {
+  width: 80%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  background-color: white;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background-color: #7AA9ED;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #ddd;
+}
+
+.no-data {
+  text-align: center;
+  color: #999;
+}
+</style>
+<body>
+    <!-- Navigation Bar -->
+    <div class="topnav" id="myTopnav">
+        <a href="index.html">Home</a>
+        <div class="dropdown">
+          <button class="dropbtn">About 
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="about.html">About Me</a>
+            <a href="projects.html">My Projects</a>
+          </div>
+        </div> 
+        <a href="contact.html">Contact</a>
+        <a href="resume.html">Resume</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+      </div>
+    <h2 style="text-align: center; margin-top: 20px;">Projects</h2>
+
+   <!-- Container Div for the Table -->
+    <div class="container">
+        <div class="content-block">
+            <table id="projects-table">
+                <thead>
+                    <tr>
+                        <th>Project Name</th>
+                        <th>Description</th>
+                        <th>Technologies Used</th>
+                        <th>Link</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Table rows will be inserted here via JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+      // Function to load CSV data and populate the table
+      fetch('assets/files/projects.csv')
+      .then(response => response.text())
+      .then(data => {
+          console.log(data); // Log the raw CSV data to the console
+          const rows = data.trim().split('\n');
+          const tableBody = document.querySelector('#projects-table tbody');
+          
+          rows.forEach((row, index) => {
+              if (index === 0) return; // Skip the header row
+              const cols = parseCSVRow(row); // Parse each row to handle commas inside quotes
+              if (cols.length >= 5) {
+                  const tr = document.createElement('tr');
+                  cols.forEach(col => {
+                      const td = document.createElement('td');
+                      td.textContent = col.trim() || 'N/A';
+                      tr.appendChild(td);
+                  });
+                  tableBody.appendChild(tr);
+              }
+          });
+      })
+      .catch(error => {
+          console.error('Error loading CSV:', error);
+          const tableBody = document.querySelector('#projects-table tbody');
+          const tr = document.createElement('tr');
+          const td = document.createElement('td');
+          td.colSpan = 5;
+          td.classList.add('no-data');
+          td.textContent = 'No project data available.';
+          tr.appendChild(td);
+          tableBody.appendChild(tr);
+      });
+  
+      // Helper function to properly parse CSV rows, considering quotes
+      function parseCSVRow(row) {
+          const pattern = /(".*?"|[^",\n]+)(?=\s*,|\s*$)/g;
+          return row.match(pattern).map(item => item.replace(/(^"|"$)/g, '')); // Remove surrounding quotes
+      }
+  
+      document.body.classList.add('fade');
+    
+    
+      document.addEventListener("DOMContentLoaded", () => {
+          window.setTimeout(function() {
+              document.body.classList.remove('fade');
+          }, 230);
+      });
+  </script>
+  
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <div class="topnav" id="myTopnav">
+        <a href="index.html">Home</a>
+        <div class="dropdown">
+          <button class="dropbtn">About 
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="about.html">About Me</a>
+            <a href="projects.html">My Projects</a>
+          </div>
+        </div> 
+        <a href="contact.html">Contact</a>
+        <a href="resume.html">Resume</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+      </div>
+
+    <!-- Main Content Section -->
+    <div class="container">
+
+        <div class="content">
+            <h1>Alex Do's Website</h1>
+
+            <div class="profile-pic">
+                <img src="assets/images/Suisei1.png" alt="sui-chan" class="profile-img">
+            </div>
+
+            <h2>👋 Welcome! (●'◡'●)</h2>
+            <p class="intro-text">
+                Hello and welcome to my site! Please explore the site to learn more about me like my hobbies, skills, and contact info!
+            </p>
+
+            <p class="link-text">
+                If you're interested in viewing my list of past and current projects, please visit the <a href="projects.php"> My Projects</a> page!
+            </p>
+
+            <div class="content-block">
+                <h2>🍚Technical Skills</h2>
+                <p class="intro-text">
+                    <ul>
+                        <li><strong>Low Level Programming: </strong>C, C++, Win32</li>
+                        <li><strong>High Level Programming: </strong>Python, Ruby, Java, JavaScript</li>
+                        <li><strong>Low Level Game Development: </strong>C, C++, GDI, OpenGL</li>
+                        <li><strong>High Level Game Development: </strong>Unity, .NET</li>
+                        <li><strong>Game Tools: </strong>C, C++, Rust, Python</li>
+                        <li><strong>Back-End Development: </strong>JavaScript, TypeScript, GoLang, Rust, Ruby on Rails</li>
+                        <li><strong>Front-End Development: </strong>HTML, CSS, JavaScript, TypeScript</li>
+                        <li><strong>Mobile Development: </strong> React Native, Flutter, Java</li>
+                    </ul>
+                </p>
+            </div>
+
+            <div class="content-block">
+                <h2>💻Languages</h2>
+                <p class="intro-text">
+                    <ul>
+                        <li><strong>C/C++</strong></li>
+                        <li><strong>HTML/CSS</strong></li>
+                        <li><strong>JavaScript/TypeScript</strong></li>
+                        <li><strong>Rust</strong></li>
+                        <li><strong>GoLang</strong></li>
+                        <li><strong>HTML/CSS</strong></li>
+                        <li><strong>Python</strong></li>
+                        <li><strong>Ruby</strong></li>
+                        <li><strong>C#</strong></li>
+
+                    </ul>
+                </p>
+            </div>
+
+            <!-- Get in Touch Block -->
+            <div class="content-block">
+                <h2>📝Contact Me</h2>
+                <p class="intro-text">
+                    You can contact me via my <a href="contact.html">contact page</a> or through my email at <strong>akdo@memphis.edu</strong>.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    
+    <footer>
+        <p>Copyright &copy; 2024 Alex Do</p>
+    </footer>
+
+    <script>
+        document.body.classList.add('fade');
+    
+    
+        document.addEventListener("DOMContentLoaded", () => {
+            window.setTimeout(function() {
+                document.body.classList.remove('fade');
+            }, 230);
+        });
+    </script>
+</body>
+</html>
