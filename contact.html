@@ -40,56 +40,62 @@
     }
   </style>
 </head>
-<body>
 
-  <div class="topnav" id="myTopnav">
-    <a href="index.html">Home</a>
-    <div class="dropdown">
-      <button class="dropbtn">About 
-        <i class="fa fa-caret-down"></i>
-      </button>
-      <div class="dropdown-content">
-        <a href="about.html">About Me</a>
-        <a href="projects.html">My Projects</a>
-      </div>
-    </div> 
-    <a href="contact.html">Contact</a>
-    <a href="resume.html">Resume</a>
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
-  </div>
-  <h1>Contact Me:</h1>
+<div class="topnav" id="myTopnav">
+  <a href="index.html">Home</a>
+  <a href="about.html">About Me</a>
+  <div class="dropdown">
+    <button class="dropbtn">My Works 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="resume.html">Resume</a>
+      <a href="projects.html">My Projects</a>
+    </div>
+  </div> 
+  <a href="contact.html">Contact Me</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+</div>
 
-  <div class="container">
-    <!-- Contact Form -->
-    <form name="contactForm" action="contact.php" method="post">
-      <label for="fname">First Name</label>
-      <input type="text" id="fname" name="firstname" placeholder="Your first name.." required>
+<div class="container">
+  <body>
+    <h1>Contact Me:</h1>
+  
+    <div class="container">
+      <!-- Contact Form -->
+      <form action="https://formspree.io/f/xjkvdrdn" method="POST">
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="First Name:" placeholder="First name" required>
+    
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="Last Name:" placeholder="Last name" required>
+    
+        <label for="email">Your Email</label>
+        <input type="email" id="email" name="Email:" placeholder="Email" required>
+    
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="Subject:" placeholder="Subject" required>
+    
+        <label for="message">Message</label>
+        <textarea id="message" name="Message:" placeholder="Message" style="height:200px" required></textarea>
+    
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+  </body>
+</div>
 
-      <label for="lname">Last Name</label>
-      <input type="text" id="lname" name="lastname" placeholder="Your last name.." required>
 
-      <label for="email">Your Email</label>
-      <input type="email" id="email" name="email" placeholder="Your email.." required>
-
-      <label for="subject">Subject</label>
-      <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px" required></textarea>
-
-      <input type="submit" name="submit" value="Submit">
-    </form>
-  </div>
-
-  <script>
-    document.body.classList.add('fade');
+<script>
+  document.body.classList.add('fade');
 
 
-    document.addEventListener("DOMContentLoaded", () => {
-        window.setTimeout(function() {
-            document.body.classList.remove('fade');
-        }, 230);
-    });
-    </script>
-
-</body>
+  document.addEventListener("DOMContentLoaded", () => {
+      window.setTimeout(function() {
+          document.body.classList.remove('fade');
+      }, 230);
+  });
+  </script>
 
 <footer>
     <p>Copyright &copy; 2024 Alex Do</p>

@@ -9,17 +9,17 @@
   <!-- Navigation Bar -->
   <div class="topnav" id="myTopnav">
     <a href="index.html">Home</a>
+    <a href="about.html">About Me</a>
     <div class="dropdown">
-      <button class="dropbtn">About 
+      <button class="dropbtn">My Works 
         <i class="fa fa-caret-down"></i>
       </button>
       <div class="dropdown-content">
-        <a href="about.html">About Me</a>
+        <a href="resume.html">Resume</a>
         <a href="projects.html">My Projects</a>
       </div>
     </div> 
-    <a href="contact.html">Contact</a>
-    <a href="resume.html">Resume</a>
+    <a href="contact.html">Contact Me</a>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
   </div>
 
@@ -27,16 +27,16 @@
   <div class="container">
     <h1>Alex Do's Resume</h1>
     <p class="intro-text">
-      Attached below is my resume, you may use the built-in viewer to read through it or you can download it as a PDF.<br>
+      Attached below is my resume. You may use the built-in viewer to read through it, or you can scroll down to download it as a PDF.<br>
     </p>
+      <!-- Resume PDF Embed Section -->
+    <div class="pdf-container">
+      <h2>Resume</h2>
+      <embed class="pdf" src="assets/files/Do.Alex-Resume.pdf" width="100%" height="600px" type="application/pdf">
+      <p><a href="assets/files/Do.Alex-Resume.pdf" download>[Download resume here.]</a></p>
+    </div>
   </div>
 
-  <!-- Resume PDF Embed Section -->
-  <div class="pdf-container">
-    <h2>Resume</h2>
-    <embed class="pdf" src="assets/files/Do.Alex-Resume.pdf" width="100%" height="600px" type="application/pdf">
-    <p><a href="assets/files/Do.Alex-Resume.pdf" download>[Download resume here.]</a></p>
-  </div>
   <script>
     document.body.classList.add('fade');
 

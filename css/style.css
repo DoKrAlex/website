@@ -11,7 +11,7 @@ body, h1, h2, p, .topnav, .dropdown, .dropdown-content {
   }
 
   body {
-    /* background-image: url('../assets/images/1024x768.png'); */
+    background-image: url('../assets/images/wallpaper.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -147,21 +147,30 @@ body.fade {
     text-decoration: underline;
   }
 
-  div.gallery {
-    margin: 5px;
-    border: 1px solid #ccc;
-    float: left;
-    width: 180px;
-  }
-  
-  div.gallery:hover {
-    border: 1px solid #777;
-  }
-  
-  div.gallery img {
-    width: 100%;
-    height: auto;
-  }
+/* Adjust the gallery container */
+div.gallery {
+  margin: 5px;
+  border: 1px solid #ccc;
+  display: inline-block; /* Align images side by side */
+  text-align: center; /* Center content in the gallery div */
+  width: 200px; /* Adjust width as needed */
+  overflow: hidden; /* Ensure the image doesn't overflow the container */
+  position: relative;
+}
+
+/* Center the images inside the gallery container */
+div.gallery img {
+  width: 100%; /* Scale the image to fit the container */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Remove default spacing */
+  margin: 0 auto; /* Center the image */
+}
+
+/* Optional: Add hover effect for gallery images */
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
   
   div.desc {
     padding: 15px;
@@ -449,7 +458,6 @@ body.fade {
   
   /* Base styling for body */
   body {
-    background: linear-gradient(to right, #D3D3D3, #aaaaaa); /* Subtle gradient from left to right */
     font-family: 'Consolas', sans-serif;
     margin: 0;
     padding: 0;
