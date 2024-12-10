@@ -11,9 +11,8 @@ body {
 }
 
 table {
-  width: 90%; /* Reduce the width to make the table smaller */
-  max-width: 1200px; /* Optional: limit maximum width */
-  margin: 20px auto; /* Center the table horizontally */
+  width: 100%;
+  margin: 20px auto;
   border-collapse: collapse;
   background-color: white;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -21,8 +20,9 @@ table {
 }
 
 th, td {
+  font-size: 14px; /* Adjust text size */
   border: 1px solid #ddd;
-  padding: 10px; /* Reduce padding for a smaller appearance */
+  padding: 10px; /* Optional: reduce padding */
   text-align: left;
 }
 
@@ -38,6 +38,17 @@ tr:nth-child(even) {
 tr:hover {
   background-color: #ddd;
 }
+
+td a {
+  text-decoration: none;
+  color: #007BFF; /* Bootstrap-like link color */
+  font-size: inherit; /* Inherit the cell's text size */
+}
+
+td a:hover {
+  text-decoration: underline; /* Add underline on hover */
+}
+
 
 .no-data {
   text-align: center;
@@ -132,6 +143,29 @@ tr:hover {
               document.body.classList.remove('fade');
           }, 230);
       });
+
+      rows.forEach((row, index) => {
+        if (index === 0) return; // Skip the header row
+        const cols = parseCSVRow(row); // Parse each row to handle commas inside quotes
+        if (cols.length >= 5) {
+          const tr = document.createElement('tr');
+          cols.forEach((col, colIndex) => {
+            const td = document.createElement('td');
+            if (colIndex === 3) { // Assuming the 4th column contains the link
+              const link = document.createElement('a');
+              link.href = col.trim() || '#'; // Use '#' if the link is empty
+              link.target = '_blank'; // Open link in a new tab
+              link.textContent = col.trim() || 'N/A'; // Display text
+              td.appendChild(link);
+            } else {
+              td.textContent = col.trim() || 'N/A';
+            }
+            tr.appendChild(td);
+          });
+          tableBody.appendChild(tr);
+        }
+      });
+
   </script>
   
 </body>
